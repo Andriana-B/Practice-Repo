@@ -1,15 +1,29 @@
 #this program does simple arithmatic calculations 
 
+def calculate(x, y, operator):
+    if operator == '+':
+        result = (x) + (y)
+        return result
+    elif operation == '-':
+        result = (x) - (y)
+        return result
+    elif operation == 'x':
+        result = (x) * (y)
+        return result
+    else: 
+        result = (x) / (y)
+        return result
+
 operation = ''
 
-while True:  #using this loop to keep askign for input until user enters a valid int/float
+while True:  
     try:
         number1 = float(input('Enter the first number: '))
         break
     except ValueError: 
         print('This is not a valid number.')
 
-operations_list = ['+', '-', 'x', '\\' ] #using this list to check if users enter a valid operation
+operations_list = ['+', '-', 'x', '\\' ] 
 while True: 
     operation = input('Enter an operation (+, -, x, \): ')
     if operation in operations_list:
@@ -24,13 +38,6 @@ while True:
     except ValueError: 
         print('This is not a valid number.')
 
-if operation == '+':
-    result = (number1) - (number2)
-elif operation == '-':
-    result = (number1) - (number2)
-elif operation == 'x':
-    result = (number1) - (number2)
-else: 
-    result = (number1) - (number2)
+calc = calculate(number1, number2, operation)
 
-print(str(number1) + ' ' + operation + ' ' + str(number2) + ' = ' + str(result))
+print(str(number1) + ' ' + operation + ' ' + str(number2) + ' = ' + str(calc))
