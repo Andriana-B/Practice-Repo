@@ -1,6 +1,6 @@
 #this program does simple arithmatic calculations 
 
-def calculate(x, y, operator):
+def calculate(x, y, operator): # This function takes two numbers and a symbol
     if operator == '+':
         result = (x) + (y)
         return result
@@ -14,16 +14,16 @@ def calculate(x, y, operator):
         result = (x) / (y)
         return result
 
-operation = ''
+operation = '' # To but inputed by user
 
-while True:  
+while True:  # Using while loop to keep asking until a valid number is given
     try:
         number1 = float(input('Enter the first number: '))
-        break
+        break  # If the input can be converted into float then it is valid, loop ends
     except ValueError: 
         print('This is not a valid number.')
 
-operations_list = ['+', '-', 'x', '\\' ] 
+operations_list = ['+', '-', 'x', '\\' ] # Using this list to check that use inputs valid symbol
 while True: 
     operation = input('Enter an operation (+, -, x, \): ')
     if operation in operations_list:
@@ -38,6 +38,6 @@ while True:
     except ValueError: 
         print('This is not a valid number.')
 
-calc = calculate(number1, number2, operation)
+calc = calculate(number1, number2, operation)  # Calling calulator function with user inputs
 
 print(str(number1) + ' ' + operation + ' ' + str(number2) + ' = ' + str(calc))
